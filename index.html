@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page </title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <script>
+        var username = "abc@sankey.com";
+        var password = "1234567";
+
+
+        function welcome() {
+            var uname = document.getElementById('username').value;
+            var pass = document.getElementById('pass').value;
+            // username validation.
+            var errorMsg = '';
+            if (uname.length == 0) {
+                errorMsg = "fill username";
+            }
+            else {
+                let regex = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
+                let result = regex.test(uname);
+                if (!result) {
+                    errorMsg = " is not a valid email address!";
+                }
+                if (uname != username) {
+                    errorMsg = 'Invalid username';
+                }
+            }
+            if (errorMsg) {
+                document.getElementById("username-error").style.display = "block";
+                document.getElementById("username-error").style.color = "red";
+                document.getElementById('username-error').innerHTML = errorMsg;
+
+            }
+
+            //password vaidations
+            errorMsg = '';
+            if (pass.length == 0) {
+                errorMsg = "fill password";
+            }
+            else {
+                if (pass.length < 6) {
+                    errorMsg = "at least 6 letters required";
+                }
+                if (pass != password)
+                    errorMsg = "Invalid password";
+
+
+            }
+            if (errorMsg) {
+                document.getElementById("pass-error").style.display = "block";
+                document.getElementById("pass-error").style.color = "red";
+                let get = document.getElementById('pass-error');
+                get.innerHTML = errorMsg;
+
+            }
+            else {
+                window.open("welcome.html", '_self');
+            }
+
+        }
+
+    </script>
+    <div class="grid-container">
+        <div class="left">
+            <img src="img.jpg">
+        </div>
+
+        <div class="right">
+            <div class="login-box">
+                <p style="margin-bottom: 0%;">Welcome Back</p>
+                <h2 style="margin-top: 0% ;">Login to your account</h2>
+
+                <div class="login-details">
+                    <label>Email</label>
+                    <input type="text" id="username">
+                    <label id="username-error" style="display: none; margin-left: 120px;"></label>
+
+                    <label>Password</label>
+                    <input type="password" id="pass">
+                    <label id="pass-error" style="display: none; margin-left: 120px;"></label>
+
+                </div>
+                <div class="info">
+                    <input type="checkbox" id="rem" name="remme" value="Remember me">
+                    <label style="margin: auto auto auto 0%;">Remember me</label>
+                    <p>forgot password?
+                    <p>
+                </div>
+
+                <input type="button" value="Login Now" class="submit-button" onclick="welcome()">
+                <button class="signin-with-google"><img src="icon_image.png" class="icon" width="50" height="30">Or
+                    sign-in with google</button>
+                <p style="margin-top: 30%;">Don't have an account? <a href="#">Join free today.</a></p>
+            </div>
+
+        </div>
+
+
+    </div>
+</body>
+
+</html>

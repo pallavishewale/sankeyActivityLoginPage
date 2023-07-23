@@ -1,0 +1,121 @@
+body {
+    background-color: rgb(233, 230, 227);
+    color: Charcoal;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: small;
+
+}
+
+
+
+.grid-container {
+    margin: 10% auto;
+    width: 70%;
+    height: 90%;
+    background: #FFFFFF;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+}
+
+
+
+.left img {
+    height: 100%;
+    width: 100%;
+}
+
+.right img {
+    height: 60%;
+    width: 9%;
+    margin-right: 5px;
+}
+
+
+
+.login-box {
+    margin: 20% auto;
+    width: 50%;
+    height: 70%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.login-details {
+    display: flex;
+    flex-direction: column;
+
+}
+
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 7px 7px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #dad6d6;
+    box-sizing: border-box;
+}
+
+
+.submit-button {
+    width: 100%;
+    padding: 8px 8px;
+    margin: 5px 0;
+    background-color: rgb(80, 172, 80);
+    color: #FFFFFF;
+    font-weight: bold;
+    border: 1px solid #727070;
+    border-radius: 4px;
+}
+
+.signin-with-google {
+    background-color: rgb(29, 36, 29);
+    color: #FFFFFF;
+    font-weight: bold;
+    border: 1px solid #c90d0d;
+    padding: 8px 8px;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    justify-content: space-between;
+}
+
+
+
+@media screen and (max-width: 700px) {
+    .grid-container {
+       
+        grid-template-columns: 100%; 
+        align-content: center;
+        align-items: center;
+        height: auto;
+
+    }
+
+    .left img {
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        
+    }
+    
+    .login-box{
+     
+        margin-bottom: 10px;
+    }
+
+
+
+
+
+
+}
